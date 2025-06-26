@@ -11,9 +11,9 @@ SESSION_CONFIGS = [
 
 ROOMS = [
     dict(
-        name='lab',
-        display_name='Lab',
-        participant_label_file='_rooms/lab.txt'
+        name='experiment',
+        display_name='Experiment',
+        # participant_label_file='_rooms/experiment.txt'
     )
 ]
 
