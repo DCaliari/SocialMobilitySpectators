@@ -1,0 +1,18 @@
+{{ block title }}
+{{ endblock }}
+{{ block content }}
+    <h1>Results</h1>
+    {% if children_status == '0' %}
+    <p>Your final bonus is: $ 0</p>
+    {% elif children_status == '1' %}
+    <p>Your final bonus is: $ 2</p>
+    {% endif %}
+
+    {% if signal == 'NaN' %}
+    <p>Your performance in the task: Not available.</p>
+    {% else %}
+    <p>Your performance in the task: You are a {{ signal }}.</p>
+    {% endif %}
+
+{{ next_button }}
+{{ endblock }}

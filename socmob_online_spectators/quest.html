@@ -1,0 +1,47 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    <b><span style="color: red">
+    {% if question == "Decision 1" %}
+        NO RELATION BETWEEN TASK RESULTS AND MOBILITY
+    {% elif question == "Decision 2" %}
+        POSITIVE RELATION BETWEEN TASK RESULTS AND MOBILITY
+    {% elif question == "Decision 3" %}
+        NEGATIVE RELATION BETWEEN TASK RESULTS AND MOBILITY
+    {% endif %}
+    </span></b>
+{% endblock %}
+
+{% block content %}
+    <p>These instructions will describe the features of the next choice.</p>
+
+    {% if question == "Decision 1" %}
+        <p><b>The results of the performed task play no role in determining the payoffs of the members of the society.</b></p>
+        <p><b>The expected payoffs of members with the same parents' status are the same irrespective of their results in the task.</b></p>
+        <p>For example, on the left there is <b>No Mobility</b>, so parents and children status are the same.</p>
+        <p>On the right, there is <b>Full Mobility</b>, and notice that mobility affects <b>equally</b> everyone with the same parent's status.</p>
+        <img src="/static/OnlineQ.png" id="pic_1" alt="not found">
+
+    {% elif question == "Decision 2" %}
+        <p><b>The results of the performed task will play a role in determining the payoffs of the members of the society.</b></p>
+        <p>If <b>Full Mobility</b> is chosen, the members who had <b>better</b> results in the task will be rewarded.</p>
+        <p>For example, on the left there is <b>No Mobility</b>, so parents and children status are the same and the results play no role.</p>
+        <p>On the right, there is <b>Full Mobility</b>, that mobility always reward members with more stars and punish members with less stars.</p>
+        <img src="/static/OnlineQ1.png" id="pic_2" alt="not found">
+
+    {% elif question == "Decision 3" %}
+        <p><b>The results of the performed task will play a role in determining the payoffs of the members of the society.</b></p>
+        <p>If <b>Full Mobility</b> is chosen, the members who had <b>worse</b> results in the task will be rewarded.</p>
+        <p>For example, on the left there is <b>No Mobility</b>, so parents and children status are the same and the results play no role.</p>
+        <p>On the right, there is <b>Full Mobility</b>, that mobility always reward members with less stars and punish members with more stars.</p>
+        <img src="/static/OnlineQ2.png" id="pic_3" alt="not found">
+    {% endif %}
+
+    <h3>Control Questions</h3>
+    {% for field in control_questions %}
+        {{ formfield field }}
+    {% endfor %}
+
+    {{ next_button }}
+{% endblock %}

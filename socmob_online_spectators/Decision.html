@@ -1,0 +1,47 @@
+{{ block title }}
+    <!-- Center Images and Radio Buttons -->
+   <form id="decision-form" method="POST">
+
+         <div class="center" style="display: flex; justify-content: center; align-items: flex-start; gap: 40px;">
+            <div class="image-container" style="text-align: center;">
+                <img src="{% static image_1 %}" alt="Left Image" style="max-width: 250px;">
+                <div>
+                    <input type="radio" id="option_1" name="selected_image" value="{{ image_1 }}" required>
+                    <label for="option_1">Select Option 1</label>
+                </div>
+            </div>
+            <div class="image-container" style="text-align: center;">
+                <img src="{% static image_2 %}" alt="Right Image" style="max-width: 250px;">
+                <div>
+                    <input type="radio" id="option_2" name="selected_image" value="{{ image_2 }}" required>
+                    <label for="option_2">Select Option 2</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Message -->
+        <div id="error-message" style="color: red; display: none; text-align: center; margin: 20px auto; width: 200px;">Please select one option.</div>
+
+        <!-- Next Button -->
+        <div style="text-align: center; margin-top: 20px;">
+            <button type="submit" class="next-button">Next</button>
+        </div>
+    </form>
+    <!-- Option selection script -->
+    <script>
+
+
+        document.getElementById('decision-form').onsubmit = function(event) {
+            const selectedOption = document.querySelector('input[name="selected_image"]:checked');
+            const errorMessage = document.getElementById('error-message');
+
+            if (!selectedOption) {
+                event.preventDefault(); // Prevent form submission
+                errorMessage.style.display = 'block'; // Show error message
+            } else {
+                errorMessage.style.display = 'none'; // Hide error message if an option is selected
+            }
+        };
+    </script>
+
+{{ endblock }}

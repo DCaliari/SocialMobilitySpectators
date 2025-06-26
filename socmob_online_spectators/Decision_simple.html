@@ -1,0 +1,150 @@
+{% block title %}
+    <b><span style="color: blue">
+    {% if question == "Decision 1" %}
+        NO RELATION BETWEEN PERFORMANCE AND BONUSES
+    {% elif question == "Decision 2" %}
+        POSITIVE RELATION BETWEEN PERFORMANCE AND BONUSES
+    {% elif question == "Decision 3" %}
+        NEGATIVE RELATION BETWEEN PERFORMANCE AND BONUSES
+    {% endif %}
+    </span></b>
+{% endblock %}
+
+
+{{ block content }}
+    <hr>
+    <table style="width: 100%; border-collapse: collapse; ">
+    <tr>
+        <td style="vertical-align: middle; width: 75%; text-align: left;">
+            <p>If you choose to keep the initial assignments </p>
+            <p>Summary:</p>
+            <ol style="list-style-type: none; padding: 0; margin: 0;">
+                <li>- Participant <img src="/static/square.png" id="pic_11" alt="not found" style="max-width: 100%; height: auto;">, who is a <b>high perfomer</b>, keeps a bonus of <b>$ 2</b>.</li>
+                <li>- Participant <img src="/static/round.png" id="pic_21" alt="not found" style="max-width: 100%; height: auto;">, who is a <b>high perfomer</b>, keeps a bonus of <b>$ 0</b>.</li>
+                <li>- Participant <img src="/static/triangle.png" id="pic_31" alt="not found" style="max-width: 100%; height: auto;">, who is a <b>low perfomer</b>, receives a bonus of <b>$ 2</b>.</li>
+                <li>- Participant <img src="/static/redcross.png" id="pic_41" alt="not found" style="max-width: 100%; height: auto;">, who is a <b>low perfomer</b>, receives a bonus of <b>$ 0</b>.</li>
+            </ol>
+        </td>
+        <td style="width: 25%; text-align: center; border: 1px solid black;">
+            <img src="/static/NoMobility.png" id="pic_1" alt="not found" style="max-width: 100%; height: auto;">
+        </td>
+    </tr>
+    </table>
+    <br>
+    <hr>
+    {% if question == "Decision 1" %}
+    <table style="width: 100%; border-collapse: collapse; ">
+    <tr>
+        <td style="vertical-align: middle; width: 75%; text-align: left;">
+            <p>If you choose to change the assignments </p>
+            <p>Summary:</p>
+            <ol style="list-style-type: none; padding: 0; margin: 0;">
+                <li>- Participant <img src="/static/square.png" id="pic_12" alt="not found" style="max-width: 100%; height: auto;">, who is a <b>high perfomer</b>, keeps a bonus of <b>$ 2</b> with 50% probability and
+                        receives a bonus of <b>$ 0</b> with 50% probability.</li>
+                <li>- Participant <img src="/static/round.png" id="pic_22" alt="not found" style="max-width: 100%; height: auto;">, who is a <b>high perfomer</b>, receives a bonus of <b>$ 2</b> with 50% probability and
+                        a bonus of <b>$ 0</b> with 50% probability.</li>
+                <li>- Participant <img src="/static/triangle.png" id="pic_32" alt="not found" style="max-width: 100%; height: auto;">, who is a <b>low perfomer</b>, keeps a bonus of <b>$ 2</b> with 50% probability and
+                        receives a bonus of <b>$ 0</b> with 50% probability.</li>
+                <li>- Participant <img src="/static/redcross.png" id="pic_42" alt="not found" style="max-width: 100%; height: auto;">, who is a <b>low perfomer</b>, receives a bonus of <b>$ 2</b> with 50% probability and
+                        a bonus of <b>$ 0</b> with 50% probability.</li>
+            </ol>
+        </td>
+        <td style="width: 25%; text-align: center; border: 1px solid black;">
+            <img src="/static/FullMobilityNeu.png" id="pic_2" alt="not found" style="max-width: 100%; height: auto;">
+        </td>
+    </tr>
+    </table>
+    <br>
+    {% elif question == "Decision 2" %}
+   <table style="width: 100%; border-collapse: collapse; ">
+    <tr>
+        <td style="vertical-align: middle; width: 75%; text-align: left;">
+            <p>If you choose to change the assignments </p>
+            <p>Summary:</p>
+            <ol style="list-style-type: none; padding: 0; margin: 0;">
+                <li>- Participant <img src="/static/square.png" id="pic_13" alt="not found" style="max-width: 100%; height: auto;">, who is a <b>high perfomer</b>, keeps a bonus of <b>$ 2</b>.</li>
+                <li>- Participant <img src="/static/round.png" id="pic_23" alt="not found" style="max-width: 100%; height: auto;">, who is a <b>high perfomer</b>, receives a bonus of <b>$ 2</b>.</li>
+                <li>- Participant <img src="/static/triangle.png" id="pic_33" alt="not found" style="max-width: 100%; height: auto;">, who is a <b>low perfomer</b>, receives a bonus of <b>$ 0</b>.</li>
+                <li>- Participant <img src="/static/redcross.png" id="pic_43" alt="not found" style="max-width: 100%; height: auto;">, who is a <b>low perfomer</b>, receives a bonus of <b>$ 0</b>.</li>
+            </ol>
+        </td>
+        <td style="width: 25%; text-align: center; border: 1px solid black;">
+            <img src="/static/FullMobilityPos.png" id="pic_3" alt="not found" style="max-width: 100%; height: auto;">
+        </td>
+    </tr>
+    </table>
+    <br>
+    {% elif question == "Decision 3" %}
+    <table style="width: 100%; border-collapse: collapse; ">
+    <tr>
+        <td style="vertical-align: middle; width: 75%; text-align: left;">
+            <p>If you choose to change the assignments </p>
+            <p>Summary:</p>
+            <ol style="list-style-type: none; padding: 0; margin: 0;">
+                <li>- Participant <img src="/static/square.png" id="pic_14" alt="not found" style="max-width: 100%; height: auto;">, who is a <b>high perfomer</b>, receives a bonus of <b>$ 0</b>.</li>
+                <li>- Participant <img src="/static/round.png" id="pic_24" alt="not found" style="max-width: 100%; height: auto;">, who is a <b>high perfomer</b>, keeps a bonus of <b>$ 0</b>.</li>
+                <li>- Participant <img src="/static/triangle.png" id="pic_34" alt="not found" style="max-width: 100%; height: auto;">, who is a <b>low perfomer</b>, receives a bonus of <b>$ 2</b>.</li>
+                <li>- Participant <img src="/static/redcross.png" id="pic_44" alt="not found" style="max-width: 100%; height: auto;">, who is a <b>low perfomer</b>, receives a bonus of <b>$ 2</b>.</li>
+            </ol>
+        </td>
+        <td style="width: 25%; text-align: center; border: 1px solid black;">
+            <img src="/static/FullMobilityNeg.png" id="pic_4" alt="not found" style="max-width: 100%; height: auto;">
+        </td>
+    </tr>
+    </table>
+    <br>
+    {% endif %}
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <p style="font-size: 24px; font-weight: bold;">CHOOSE WHETHER TO KEEP OR CHANGE THE ASSIGNMENTS:</p>
+    <br>
+    <!-- Center Images and Radio Buttons -->
+   <form id="decision-form" method="POST">
+
+         <div class="center" style="display: flex; justify-content: center; align-items: flex-start; gap: 40px;">
+            <div class="image-container" style="text-align: center;">
+                <img src="{% static image_1 %}" alt="Left Image" style="max-width: 80%;">
+                <div>
+                    <input type="radio" id="option_1" name="selected_image" value="{{ image_1 }}" required>
+                    <label for="option_1"><b>Option 1</b></label>
+                </div>
+            </div>
+            &nbsp;
+            <div class="image-container" style="text-align: center;">
+                <img src="{% static image_2 %}" alt="Right Image" style="max-width: 80%;">
+                <div>
+                    <input type="radio" id="option_2" name="selected_image" value="{{ image_2 }}" required>
+                    <label for="option_2"><b>Option 2</b></label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Message -->
+        <div id="error-message" style="color: red; display: none; text-align: center; margin: 20px auto; width: 200px;">Please select one option.</div>
+
+        <!-- Next Button -->
+        <div style="text-align: center; margin-top: 20px;">
+            <button type="submit" class="next-button">Next</button>
+        </div>
+    </form>
+    <!-- Option selection script -->
+    <script>
+
+
+        document.getElementById('decision-form').onsubmit = function(event) {
+            const selectedOption = document.querySelector('input[name="selected_image"]:checked');
+            const errorMessage = document.getElementById('error-message');
+
+            if (!selectedOption) {
+                event.preventDefault(); // Prevent form submission
+                errorMessage.style.display = 'block'; // Show error message
+            } else {
+                errorMessage.style.display = 'none'; // Hide error message if an option is selected
+            }
+        };
+    </script>
+
+{{ endblock }}
