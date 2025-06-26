@@ -1,0 +1,1 @@
+Tested with oTree 5.9.7 and python 3.10.8
