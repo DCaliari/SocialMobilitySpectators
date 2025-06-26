@@ -1,24 +1,11 @@
 from os import environ
 
 SESSION_CONFIGS = [
-dict(
-        name='test',
-        app_sequence=['task_online', 'questions_online', 'socmob_online'],
-        num_demo_participants=4,
-        time_to_solve=1,
-    ),
-    dict(
-        name='socmob_society',
-        app_sequence=['task_online', 'questions_online', 'socmob_online', 'results_socmob_spectators'],
-        num_demo_participants=10,
-        time_to_solve=10,
-    ),
-
     dict(
         name='socmob_spectators',
         app_sequence=['task_online_spectators', 'questions_online_spectators', 'socmob_online_spectators', 'results_socmob_spectators'],
-        num_demo_participants=10,
-        time_to_solve=10,
+        num_demo_participants=20,
+        time_to_solve=180,
     ),
 ]
 
