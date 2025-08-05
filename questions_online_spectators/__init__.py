@@ -33,14 +33,17 @@ class Player(BasePlayer):
                                   choices=["a. Yes.",
                                            "b. No"],
                                   widget=widgets.RadioSelect)
-    q_2_spec = models.StringField(label="2) How many members who scored in the top (resp. bottom) half of the task can have high status parents?",
+    q_2_spec = models.StringField(label="2) How many high performers (children) are initially assigned a bonus of 2 dollars?",
                                   choices=["a. Zero.",
                                            "b. One.",
-                                           "c. More than one."],
+                                           "c. Two."],
                                   widget=widgets.RadioSelect)
-    q_3_spec = models.StringField(label="3) Does the number of participants per each status change depending on the social mobility you choose?",
-                                  choices=["a. Yes.",
-                                           "b. No."],
+    q_3_spec = models.StringField(label="3) How many participants in the society will receive the bonus of 2 dollars at the end of the experiment?",
+                                  choices=["a. Zero.",
+                                           "b. One.",
+                                           "c. Two.",
+                                           "d. Three.",
+                                           "e. Four."],
                                   widget=widgets.RadioSelect)
 
     top_half = models.IntegerField(label="Likelihood of being in the top-half")
@@ -63,7 +66,7 @@ def q_2_spec_error_message(player, value):
 
 
 def q_3_spec_error_message(player, value):
-    if value != "b. No.":
+    if value != "c. Two.":
         player.error_q_3_spec = True  # Record the error
         return 'This answer is wrong'
 
