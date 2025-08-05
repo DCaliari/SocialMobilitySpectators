@@ -74,8 +74,10 @@ class Player(BasePlayer):
         label="Were the experimental instructions and the design clear? If anything was unclear about the instructions/design, e.g. how you will be paid, the role of the opening task, etc…, please describe briefly. (max 500 char.)")
     q_final_2 = models.LongStringField(label="What do you think is the purpose of the experiment? (max 500 char.)")
     q_final_3 = models.LongStringField(
-        label="Did you answer each question independently from other questions or did you consider your answers to previous choices? Reply with “Yes or No” and please briefly explain why. (max 500 char.)")
+        label="Did you answer each question independently from other questions or did you consider your answers to previous choices? Please briefly explain why. (max 500 char.)")
     q_final_4 = models.LongStringField(
+        label="Did you understand the difference between redistribution of money (not this experiment!) and odds (this experiment!)? Please describe briefly. (max 500 char.)”")
+    q_final_5 = models.LongStringField(
         label="Can you briefly motivate all or some of your choices? E.g. “I care about re-assigning the bonus because…”, “I wanted to maximize my own payoff, therefore…”, “I wanted to reward members who did well in the task, therefore…”, “I wanted to punish members who did badly in the task, therefore… (max 500 char.)”")
 
     parent = models.StringField()
@@ -127,6 +129,10 @@ def q_final_3_error_message(player, value):
 
 
 def q_final_4_error_message(player, value):
+    if len(value) > C.Char_limit:
+        return 'Character limit is ' + str(C.Char_limit)
+
+def q_final_5_error_message(player, value):
     if len(value) > C.Char_limit:
         return 'Character limit is ' + str(C.Char_limit)
 
@@ -284,7 +290,7 @@ class Decision_simple(Page):
 
 class Quest_Final(Page):
     form_model = 'player'
-    form_fields = ['q_final_1', 'q_final_2', 'q_final_3', 'q_final_4']
+    form_fields = ['q_final_1', 'q_final_2', 'q_final_3', 'q_final_4', 'q_final_5']
 
     @staticmethod
     def is_displayed(player: Player):
